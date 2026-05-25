@@ -1,4 +1,4 @@
-1. **Struct Change — `firstName` field size**
+**Struct Change — `firstName` field size**
 ```c
 // Original
 char firstName[10];
@@ -8,14 +8,10 @@ char firstName[15];
 ```
 Increased the first name buffer from 10 to 15 characters to accommodate longer names.
 
-
-
-2. **File Initialization — `initializeFile()`**
+**File Initialization — `initializeFile()`**
 This is a **brand new function** not present in the original. It checks if `credit.dat` exists; if not, it creates the file and pre-fills it with 100 blank records. The original required the file to already exist and would simply exit if it didn't.
 
-
-
-3. **Expanded Menu — from 5 options to 11**
+**Expanded Menu — from 5 options to 11**
 
 | Original | Modified |
 |---|---|
@@ -31,7 +27,7 @@ This is a **brand new function** not present in the original. It checks if `cred
 | | 10. Statistics |
 | | 11. Exit |
 
-4. **New Functions Added**
+**New Functions Added**
 
 **`viewAccounts()`** — Loops through all 100 records and prints every active account in a formatted table. The original had no dedicated view-all feature.
 
@@ -45,16 +41,13 @@ This is a **brand new function** not present in the original. It checks if `cred
 
 **`statistics()`** — Scans all records and reports the total number of active accounts, total balance across all accounts, and average balance per account.
 
-
-5. **`addAccount()` — Cleaner Input**
+**`addAccount()` — Cleaner Input**
 The original `newRecord()` used a single `scanf` to read last name, first name, and balance together (`scanf("%14s%9s%lf", ...)`). The modified version uses **separate prompts** for each field, making it more user-friendly.
 
-
-6. **`updateAccount()` vs `updateRecord()`**
+**`updateAccount()` vs `updateRecord()`**
 The original printed the account details before and after the transaction. The modified version simply shows the **current balance**, asks for the amount, and confirms the update — cleaner and less verbose.
 
-
- 7. **Error Handling & UX Improvements**
+**Error Handling & UX Improvements**
 - The modified code uses `return` early from functions on errors (e.g., account not found, insufficient balance) instead of nested `if-else` blocks, making the logic easier to follow.
 - Success/failure messages are clearer ("Account Added Successfully!", "Insufficient Balance!", etc.).
 - The menu is displayed with a formatted header (`BANK MANAGEMENT SYSTEM`) for better readability.
